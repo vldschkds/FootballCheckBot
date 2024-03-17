@@ -88,8 +88,8 @@ def website(message):
 @bot.message_handler(commands=['start'])
 def foo(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
-    webAppTest = types.WebAppInfo("https://www.youtube.com/")
-    my_site = types.KeyboardButton(text='Перейти на сайт', web_app=webAppTest)
+    webAppTest = types.WebAppInfo("https://ru.uefa.com/")
+    my_site = types.KeyboardButton(text='Перейти на сайт UEFA', web_app=webAppTest)
     champ_league = types.KeyboardButton('Лига Чемпионов')
     five_league = types.KeyboardButton('Топ-5 Чемпионатов')
     markup.row(champ_league, five_league)
