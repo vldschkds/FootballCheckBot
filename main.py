@@ -88,12 +88,9 @@ def website(message):
 @bot.message_handler(commands=['start'])
 def foo(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
-    webAppTest = types.WebAppInfo("https://ru.uefa.com/")
-    my_site = types.KeyboardButton(text='Перейти на сайт UEFA', web_app=webAppTest)
     champ_league = types.KeyboardButton('Лига Чемпионов')
     five_league = types.KeyboardButton('Топ-5 Чемпионатов')
     markup.row(champ_league, five_league)
-    markup.row(my_site)
     bot.send_message(message.chat.id, f'Что Вы хотите выбрать?', reply_markup=markup)
 
 
