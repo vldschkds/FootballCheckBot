@@ -189,20 +189,39 @@ def champ_league(message):
         bot.send_message(message.chat.id, lch_18)
 
     elif message.text == '1/4':
-        if response_final.status_code == 404:
+        if response_14.status_code == 404:
             bot.send_message(message.chat.id, 'К сожалению, данный этап турнира еще не прошёл')
         else:
-            bot.send_message(message.chat.id, 'Скоро получим ифнормацию!')
+            sp_14 = []
+
+            for i in tab_14:
+                sp_14.append(i.text.split())
+            sp_one_four = sp_14[0][1:]
+
+            sp_one_four.remove('Манчестер'), sp_one_four.remove('Манчестер')
+            sp_one_four.remove('(по'), sp_one_four.remove('пен.'), sp_one_four.remove('3:4)')
+
+            lch_14 = ''
+            cnt_14 = 0
+
+            for i in sp_one_four:
+                lch_14 += f' {i} '
+                cnt_14 += 1
+                if cnt_14 == 7:
+                    lch_14 += '\n'
+                    cnt_14 = 0
+
+            bot.send_message(message.chat.id, lch_14)
 
     elif message.text == '1/2':
-        if response_final.status_code == 404:
-            bot.send_message(message.chat.id, 'К сожалению, данный этап турнира еще не прошёл')
+        if response_12.status_code == 404:
+            bot.send_message(message.chat.id, 'Данный этап турнира будет проходить с 30 апреля по 1 мая!')
         else:
             bot.send_message(message.chat.id, 'Скоро получим ифнормацию!')
 
     elif message.text == 'Финал':
         if response_final.status_code == 404:
-            bot.send_message(message.chat.id, 'К сожалению, данный этап турнира еще не прошёл')
+            bot.send_message(message.chat.id, 'Данный этап турнира пройдет 1 июня 2024 года!')
         else:
             bot.send_message(message.chat.id, 'Скоро получим ифнормацию!')
 
