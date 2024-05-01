@@ -223,7 +223,24 @@ def champ_league(message):
         if response_final.status_code == 404:
             bot.send_message(message.chat.id, 'Данный этап турнира пройдет 1 июня 2024 года!')
         else:
-            bot.send_message(message.chat.id, 'Скоро получим ифнормацию!')
+            sp_12 = []
+
+            for i in tab_12:
+                sp_12.append(i.text.split())
+            sp_one_two = sp_12[0][1:]
+
+            lch_12 = ''
+            cnt_12 = 0
+
+            for i in sp_one_two:
+                lch_12 += f' {i} '
+                cnt_12 += 1
+                if cnt_12 == 7:
+                    lch_12 += '\n'
+                    cnt_12 = 0
+
+            bot.send_message(message.chat.id, lch_12)
+
 
     elif message.text == 'Топ-5 бомбардиров ЛЧ':
 
