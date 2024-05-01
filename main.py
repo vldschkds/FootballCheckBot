@@ -217,12 +217,7 @@ def champ_league(message):
         if response_12.status_code == 404:
             bot.send_message(message.chat.id, 'Данный этап турнира будет проходить с 30 апреля по 1 мая!')
         else:
-            bot.send_message(message.chat.id, 'Скоро получим ифнормацию!')
 
-    elif message.text == 'Финал':
-        if response_final.status_code == 404:
-            bot.send_message(message.chat.id, 'Данный этап турнира пройдет 1 июня 2024 года!')
-        else:
             sp_12 = []
 
             for i in tab_12:
@@ -241,6 +236,11 @@ def champ_league(message):
 
             bot.send_message(message.chat.id, lch_12)
 
+    elif message.text == 'Финал':
+        if response_final.status_code == 404:
+            bot.send_message(message.chat.id, 'Данный этап турнира пройдет 1 июня 2024 года!')
+        else:
+            bot.send_message(message.chat.id, 'Скоро получим ифнормацию!')
 
     elif message.text == 'Топ-5 бомбардиров ЛЧ':
 
