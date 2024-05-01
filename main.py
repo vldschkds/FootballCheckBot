@@ -131,62 +131,68 @@ def champ_league(message):
 
     elif message.text == 'Групповой этап':
 
-        sp_gr = []
-        for i in tab_group:
-            sp_gr.append(i.text.split())
+        if response_18.status_code == 404:
+            bot.send_message(message.chat.id, 'Данный этап турнира будет проходить с 19 сентября по 13 декабря!')
+        else:
+            sp_gr = []
+            for i in tab_group:
+                sp_gr.append(i.text.split())
 
-        sp_group = sp_gr[0][23:]
+            sp_group = sp_gr[0][23:]
 
-        cnt_group = 0
-        tab_cnt_group = 0
-        num_group = 10
+            cnt_group = 0
+            tab_cnt_group = 0
+            num_group = 10
 
-        (sp_group.remove('Манчестер'), sp_group.remove('Манчестер'), sp_group.remove('Реал'), sp_group.remove('Реал'),
-         sp_group.remove('Д'),
-         sp_group.remove('Берлин'), sp_group.remove('Булл'), sp_group.remove('Лейпциг'), sp_group.remove('Янг'),
-         sp_group.remove('Звезда'))
+            (sp_group.remove('Манчестер'), sp_group.remove('Манчестер'), sp_group.remove('Реал'), sp_group.remove('Реал'),
+             sp_group.remove('Д'),
+             sp_group.remove('Берлин'), sp_group.remove('Булл'), sp_group.remove('Лейпциг'), sp_group.remove('Янг'),
+             sp_group.remove('Звезда'))
 
-        lch_group = ''
+            lch_group = ''
 
-        for i in sp_group:
-            lch_group += f' {i} '
-            cnt_group += 1
-            tab_cnt_group += 1
-            if i == 'Группа':
-                num_group = 10
-            if cnt_group == num_group:
-                lch_group += '\n'
-                cnt_group = 0
-                num_group = 9
-            if tab_cnt_group == 46:
-                lch_group += '\n'
-                tab_cnt_group = 0
+            for i in sp_group:
+                lch_group += f' {i} '
+                cnt_group += 1
+                tab_cnt_group += 1
+                if i == 'Группа':
+                    num_group = 10
+                if cnt_group == num_group:
+                    lch_group += '\n'
+                    cnt_group = 0
+                    num_group = 9
+                if tab_cnt_group == 46:
+                    lch_group += '\n'
+                    tab_cnt_group = 0
 
-        bot.send_message(message.chat.id, lch_group)
+            bot.send_message(message.chat.id, lch_group)
 
     elif message.text == '1/8':
 
-        sp_18 = []
+        if response_18.status_code == 404:
+            bot.send_message(message.chat.id, 'Данный этап турнира будет проходить с 13 февраля по 13 марта!')
+        else:
+            sp_18 = []
 
-        for i in tab_18:
-            sp_18.append(i.text.split())
-        sp_one_eight = sp_18[0][1:]
+            for i in tab_18:
+                sp_18.append(i.text.split())
+            sp_one_eight = sp_18[0][1:]
 
-        sp_one_eight.remove('Манчестер'), sp_one_eight.remove('Манчестер')
-        sp_one_eight.remove('Сосьедад'), sp_one_eight.remove('Сосьедад')
-        sp_one_eight.remove('(по'), sp_one_eight.remove('пен.'), sp_one_eight.remove('4:2)')
+            sp_one_eight.remove('Манчестер'), sp_one_eight.remove('Манчестер')
+            sp_one_eight.remove('Сосьедад'), sp_one_eight.remove('Сосьедад')
+            sp_one_eight.remove('(по'), sp_one_eight.remove('пен.'), sp_one_eight.remove('4:2)')
 
-        lch_18 = ''
-        cnt_18 = 0
+            lch_18 = ''
+            cnt_18 = 0
 
-        for i in sp_one_eight:
-            lch_18 += f' {i} '
-            cnt_18 += 1
-            if cnt_18 == 7:
-                lch_18 += '\n'
-                cnt_18 = 0
+            for i in sp_one_eight:
+                lch_18 += f' {i} '
+                cnt_18 += 1
+                if cnt_18 == 7:
+                    lch_18 += '\n'
+                    cnt_18 = 0
 
-        bot.send_message(message.chat.id, lch_18)
+            bot.send_message(message.chat.id, lch_18)
 
     elif message.text == '1/4':
         if response_14.status_code == 404:
