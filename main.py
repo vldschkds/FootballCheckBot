@@ -315,7 +315,8 @@ def champ_league(message):
         spain_s = ''
         spain_cnt = 0
 
-        lst_new.pop(41), lst_new.pop(122)
+        lst_new.remove('Райо')
+        lst_new.pop(41)
 
         for i in lst_new:
             spain_s += f' {i} |'
@@ -385,8 +386,6 @@ def champ_league(message):
         lst_base[2], lst_base[3], lst_base[4], lst_base[5] = 'Игр', 'Выйгрышей', 'Ничья', 'Проигрышей'
         lst_base[6], lst_base[7] = 'Забито-пропущено', 'Очки'
         lst_new = lst[0][8:]
-
-        lst_new.remove('Райо')
 
         france_base = ' | '.join(lst_base)
 
