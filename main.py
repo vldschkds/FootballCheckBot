@@ -131,7 +131,7 @@ def champ_league(message):
 
     elif message.text == 'Групповой этап':
 
-        if response_18.status_code == 404:
+        if response_s.status_code == 404:
             bot.send_message(message.chat.id, 'Данный этап турнира будет проходить с 19 сентября по 13 декабря!')
         else:
             sp_gr = []
@@ -152,7 +152,9 @@ def champ_league(message):
             lch_group = ''
 
             for i in sp_group:
-                lch_group += f' {i} '
+                if i in 'ABCDEFGH':
+                    i = f'{i}:\n'
+                lch_group += f' {i}'
                 cnt_group += 1
                 tab_cnt_group += 1
                 if i == 'Группа':
