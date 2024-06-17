@@ -290,9 +290,8 @@ def champ_league(message):
         apl_s = ''
         apl_cnt = 0
 
-        (lst_new.pop(17), lst_new.pop(25),
-         lst_new.pop(49), lst_new.pop(106),
-         lst_new.pop(131), lst_new.pop(156))
+        (lst_new.remove('Ман'), lst_new.remove('Вилла'), lst_new.remove('Вест'),
+         lst_new.remove('Кристал'), lst_new.remove('Ноттингем'), lst_new.remove('Юнайтед'))
 
         for i in lst_new:
             apl_s += f' {i} |'
