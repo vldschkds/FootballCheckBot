@@ -386,6 +386,8 @@ def champ_league(message):
         lst_base[6], lst_base[7] = 'Забито-пропущено', 'Очки'
         lst_new = lst[0][8:]
 
+        lst_new.remove('Райо')
+
         france_base = ' | '.join(lst_base)
 
         france_s = ''
