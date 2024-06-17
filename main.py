@@ -154,6 +154,8 @@ def champ_league(message):
             for i in sp_group:
                 if i in 'ABCDEFGH':
                     i = f'{i}:\n'
+                if i == 'Ред':
+                    i = 'Зальцбург'
                 lch_group += f' {i}'
                 cnt_group += 1
                 tab_cnt_group += 1
