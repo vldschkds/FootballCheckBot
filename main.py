@@ -32,7 +32,7 @@ soup_12 = BeautifulSoup(text_12, 'html.parser')
 tab_12 = soup_12.find_all('div', class_='statistics-table statistics-table_stats-games')
 
 #ФИНАЛ ЛЧ
-response_final = requests.get("https://matchtv.ru/football/ucl/stats/season_20955/tour_-final")
+response_final = requests.get("https://matchtv.ru/football/ucl/stats/season_20955/tour_-1")
 text_final = response_final.text
 soup_final = BeautifulSoup(text_final, 'html.parser')
 tab_final = soup_final.find_all('div', class_='statistics-table statistics-table_stats-games')
