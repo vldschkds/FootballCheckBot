@@ -8,7 +8,7 @@ bot = telebot.TeleBot("7151659098:AAHUkvibjLBydfxM-7phco0NBtoUzioUBmY")
 #ТУРНИРНАЯ СЕТКА
 
 #ГРУППОВОЙ ЭТАП ЛЧ
-response_s = requests.get("https://www.sports.ru/football/tournament/ucl/table/")
+response_s = requests.get("https://www.sports.ru/football/tournament/ucl/table/?s=631241&sub=table")
 text_s = response_s.text
 soup_group = BeautifulSoup(text_s, 'html.parser')
 tab_group = soup_group.find_all('div', class_='main-column--full-width')
