@@ -144,7 +144,7 @@ def champ_league(message):
             tab_cnt_group = 0
             num_group = 10
 
-            (sp_group.remove('Манчестер'), sp_group.remove('Манчестер'), sp_group.remove('Реал'), sp_group.remove('Реал'),
+            (sp_group.pop(0), sp_group.remove('Манчестер'), sp_group.remove('Манчестер'), sp_group.remove('Реал'), sp_group.remove('Реал'),
              sp_group.remove('Д'),
              sp_group.remove('Берлин'), sp_group.remove('Булл'), sp_group.remove('Лейпциг'), sp_group.remove('Янг'),
              sp_group.remove('Звезда'))
